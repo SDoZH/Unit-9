@@ -8,7 +8,7 @@ namespace Unit_9
         static void Main(string[] args)
         {
             CalculateDelegate calcDelegate = Calculate;
-            int result = calcDelegate.Invoke(100, 30);
+            int result = calcDelegate(100, 30);
 
             Console.WriteLine(result);
             Console.Read();
