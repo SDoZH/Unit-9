@@ -4,20 +4,22 @@ namespace Unit_9
 {
    public class Program
     {
-        delegate int CalculateDelegate(int a, int b);
+        public delegate void CalculateDelegate(int a, int b);
         static void Main(string[] args)
         {
-            CalculateDelegate calcDelegate = Calculate;
-            int result = calcDelegate(100, 30);
-
-            Console.WriteLine(result);
-            Console.Read();
-
+            CalculateDelegate calcDelegate = Calculate1;
+            calcDelegate += Calculate2;
+            calcDelegate(105, 125);
         }
-        static int Calculate(int a, int b)
+        static void Calculate1(int a, int b)
         {
-            return a - b;
+            Console.WriteLine(a - b);
+        }
+        static void Calculate2(int a, int b)
+        {
+            Console.WriteLine(a + b);
         }
     }
+
 }
     
