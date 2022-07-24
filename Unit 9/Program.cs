@@ -9,6 +9,8 @@ namespace Unit_9
         {
             CalculateDelegate calcDelegate = Calculate1;
             calcDelegate += Calculate2;
+
+            calcDelegate -= Calculate1;
             calcDelegate(105, 125);
         }
         static void Calculate1(int a, int b)
